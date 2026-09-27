@@ -1,0 +1,17 @@
+name: Checagens
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  i18n:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+      - name: Traduções completas
+        run: python3 tools/check_i18n.py
