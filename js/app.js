@@ -10,6 +10,12 @@ const LINKS = {
   game: '',
 };
 
+// Trailer gravado em cada idioma do jogo (tools/trailer no repositório do jogo).
+const TRAILERS = {
+  'pt-BR': 'assets/video/trailer-pt_BR',
+  it: 'assets/video/trailer-it',
+};
+
 const FALLBACK_LANG = 'pt-BR';
 const LANG_KEY = 'fdb-lang';
 const SLIDE_INTERVAL = 4000;
@@ -54,6 +60,7 @@ function applyLang(lang) {
   document.querySelectorAll('.lang__btn').forEach((button) => {
     button.setAttribute('aria-pressed', String(button.dataset.lang === lang));
   });
+  applyTrailer(lang);
   document.querySelectorAll('.peek__dot').forEach((dot, index) => {
     dot.setAttribute('aria-label', `${table.slideGo} ${index + 1}`);
   });
@@ -62,6 +69,18 @@ function applyLang(lang) {
   } catch {
     // navegação privada: só não lembra a escolha
   }
+}
+
+function applyTrailer(lang) {
+  const video = document.querySelector('.trailer');
+  if (!video) return;
+  const base = TRAILERS[lang] || TRAILERS[FALLBACK_LANG];
+  const source = video.querySelector('source');
+  if (source.getAttribute('src') === `${base}.mp4`) return;
+  video.pause();
+  video.poster = `${base}.webp`;
+  source.src = `${base}.mp4`;
+  video.load();
 }
 
 document.querySelectorAll('.lang__btn').forEach((button) => {
