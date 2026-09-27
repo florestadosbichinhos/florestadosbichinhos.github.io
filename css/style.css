@@ -153,11 +153,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .cast--hero .cast__one--lali { width: 26%; left: -2%; bottom: 4%; }
 .cast--hero .cast__one--sophy { width: 23%; right: -1%; bottom: 6%; }
 
-@keyframes float { 50% { transform: translateY(-10px); } }
-.cast__one { animation: float 4.5s ease-in-out infinite; }
-.cast__one--didia { animation-delay: -1.1s; }
-.cast__one--lali { animation-delay: -2.2s; }
-.cast__one--sophy { animation-delay: -3.3s; }
+/* balanço leve a partir dos pés */
+@keyframes sway {
+  from { transform: rotate(-2.5deg); }
+  to { transform: rotate(2.5deg); }
+}
+.cast__one, .friend__art img {
+  transform-origin: 50% 100%;
+  animation: sway 3.2s ease-in-out infinite alternate;
+}
+.cast__one--didia, .f-rose .friend__art img { animation-delay: -.8s; }
+.cast__one--lali, .f-sun .friend__art img { animation-delay: -1.6s; }
+.cast__one--sophy, .f-peach .friend__art img { animation-delay: -2.4s; }
 
 /* ── garantias ──────────────────────────────────────────── */
 .guarantees { max-width: var(--max); margin: -40px auto 0; padding: 0 var(--gutter) 90px; position: relative; }
@@ -340,7 +347,7 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }
-  .cast__one { animation: none; }
+  .cast__one, .friend__art img { animation: none; }
   .tablet--peek .peek__track { transition: none; }
   .js .reveal { opacity: 1; transform: none; transition: none; }
 }
