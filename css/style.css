@@ -196,7 +196,18 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
   position: absolute; left: 0; bottom: 0; width: 100%; height: auto;
   pointer-events: none;
 }
-.band--leaf .band__inner { padding-bottom: clamp(56px, 7vw, 96px); }
+.band--leaf .band__inner { padding-bottom: clamp(24px, 3vw, 44px); }
+/* a onda de baixo continua o chão de grama do cenário, com emenda suave */
+.band--leaf .wave--bottom { fill: #3a9627; }
+.band--leaf::after {
+  content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 56px; pointer-events: none;
+  background: linear-gradient(to bottom, rgba(58, 150, 39, 0), #3a9627);
+}
+/* sombra de contato: o tablet pousa na grama */
+.tablet--video::after {
+  content: ''; position: absolute; z-index: -1; left: 8%; right: 8%; bottom: -18px; height: 36px;
+  background: radial-gradient(closest-side, rgba(20, 50, 10, .45), transparent);
+}
 
 .band--sun { --band: var(--sun); overflow-x: clip; }
 .band__inner--split { display: grid; grid-template-columns: 180px 1fr 180px; align-items: center; gap: 24px; }
