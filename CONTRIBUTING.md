@@ -17,4 +17,4 @@ Regras do site:
 - Funciona no celular (390 px) sem rolagem lateral e respeita "reduzir movimento".
 - Imagens em WebP; arte nova precisa ser sua ou CC0/CC BY e entra sob a CC BY-NC-SA 4.0.
 
-As regras completas do projeto estão no CONTRIBUTING do repositório do jogo.
+As regras completas do projeto estão no [CONTRIBUTING do repositório do jogo](https://github.com/lucassdoro/floresta-dos-bichinhos/blob/main/CONTRIBUTING.md).

@@ -1,13 +1,14 @@
 /* Floresta dos Bichinhos — comportamento da página. Sem dependência externa. */
 
-// Links de download e do repositório do jogo. Vazio = aparece "Em breve".
+// Links de download (sempre a última versão) e do repositório do jogo. Vazio = "Em breve".
+const DOWNLOADS = 'https://github.com/lucassdoro/floresta-dos-bichinhos/releases/latest/download';
 const LINKS = {
-  android: '',
+  android: `${DOWNLOADS}/floresta-dos-bichinhos-android.apk`,
   macos: '',
-  linux: '',
-  windows: '',
-  contribute: '',
-  game: '',
+  linux: `${DOWNLOADS}/floresta-dos-bichinhos-linux.tar.gz`,
+  windows: `${DOWNLOADS}/floresta-dos-bichinhos-windows.zip`,
+  contribute: 'https://github.com/lucassdoro/floresta-dos-bichinhos/blob/main/CONTRIBUTING.md',
+  game: 'https://github.com/lucassdoro/floresta-dos-bichinhos',
 };
 
 // Trailer gravado em cada idioma do jogo (tools/trailer no repositório do jogo).
