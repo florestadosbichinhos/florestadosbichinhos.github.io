@@ -133,6 +133,11 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .platforms__item--linux { color: #333; }
 .platforms__item--windows { color: #0078d4; }
 .platforms__item span { color: var(--brown); }
+.platforms__soon {
+  font: 700 .66rem/1 var(--body); font-style: normal; color: var(--soft-brown);
+  background: var(--paper); padding: .25em .5em; border-radius: 999px;
+}
+.platforms__item--apple .platforms__icon { opacity: .45; }
 .platforms__icon path, .store__icon path { fill: currentColor; }
 
 .hero__stage { position: relative; padding: 60px 30px; }
