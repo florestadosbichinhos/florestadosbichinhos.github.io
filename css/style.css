@@ -294,12 +294,14 @@ ul, ol { margin: 0; padding: 0; list-style: none; }
 .stores { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; margin-top: 18px; }
 .store {
   display: grid; grid-template-columns: 30px 1fr; grid-template-rows: auto auto; column-gap: 12px;
-  align-items: center; text-decoration: none;
+  align-items: center; text-align: left; text-decoration: none;
   background: var(--white); border-radius: 18px; padding: 12px 16px; box-shadow: var(--shadow-s);
 }
 .store__icon { width: 30px; height: 30px; grid-row: span 2; color: var(--brown); }
-.store__name { font: 800 1.1rem/1.1 var(--display); }
-.store__soon { justify-self: start; }
+.store__name { grid-column: 2; font: 800 1.1rem/1.1 var(--display); }
+.store__soon { grid-column: 2; justify-self: start; }
+/* sem o selo "Em breve", o nome ocupa as duas linhas e centraliza com o ícone */
+.store:not([aria-disabled='true']) .store__name { grid-row: 1 / span 2; align-self: center; }
 .store:not([aria-disabled='true']):hover { background: var(--paper); }
 
 /* ── rodapé ─────────────────────────────────────────────── */
