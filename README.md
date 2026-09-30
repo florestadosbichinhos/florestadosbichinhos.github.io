@@ -3,6 +3,8 @@
 Site do [Floresta dos Bichinhos](https://github.com/lucassdoro/floresta-dos-bichinhos), jogo
 educativo e gratuito para crianças de 3 a 7 anos.
 
+No ar em **https://florestadosbichinhos.github.io**.
+
 Página estática — HTML, CSS e JavaScript, sem build e sem dependências. Publicada pelo
 GitHub Pages a partir da `main`.
 
